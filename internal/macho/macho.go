@@ -61,6 +61,21 @@ func (m *MachOFile) Init() error {
 	return nil
 }
 
+// Prints file information
+func (m MachOFile) Info() {
+	stat, err := m.file.Stat()
+	if err != nil {
+		m.logger.Fatalln(err)
+	}
+
+	m.logger.Println("Macho file info:")
+	m.logger.Println("\tSize: ", stat.Size())
+
+	for _, a := range m.archs {
+		a.Info()
+	}
+}
+
 // open file and read data
 //
 // Returns:
