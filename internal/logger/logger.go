@@ -36,6 +36,18 @@ func (l Logger) Debugln(args ...any) {
 	}
 }
 
+func (l Logger) Printf(format string, args ...any) {
+	fmt.Printf(format, args...)
+}
+
+func (l Logger) Print(args ...any) {
+	fmt.Print(args...)
+}
+
+func (l Logger) Println(args ...any) {
+	fmt.Println(args...)
+}
+
 func (l Logger) Errorf(format string, args ...any) {
 	fmt.Printf(format, args...)
 }
