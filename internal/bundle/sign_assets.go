@@ -13,7 +13,7 @@ type SignAssets struct {
 	Privatekey  *rsa.PrivateKey
 }
 
-func Init(
+func ParseCertificates(
 	certFilePath string,
 	privateKeyFilePath string,
 	provisioningFilePath string,
